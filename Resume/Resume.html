@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!----Not using CSS styling so resume is gonna look meh right now, 10/27/20--->
+    <head>
+        <title>My Resume</title>
+        <link rel="stylesheet" type="text/css" href="./assets/stylesheets/stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="page-top">
+             <h1 id="resume-name"><span class="first-color">P</span>atrick <span class="first-color">A</span>larcon</h1>
+            <h4 class="sub-items" id="address">4009 Sabio Dr, Austin, Texas 78749</h4>
+            <h4 class="sub-items" id="site-list">(704) 458-6823 | <a href="mailto:sample@uncc.edu">My Email</a> | <a href="https://www.github.com/asceide" target="_blank">My GitHub</a> | <a href="https://www.linkedin.com/patrickdalarcon" target="_blank">My LinkedIn</a></h4>
+        </div>
+        <hr size="3px" noshade>
+        <div>
+            <h2 class="topic-element"><span class="first-color">E</span>ducation</h2>
+            <div>
+                <p class="subtopic">University of North Carolina at Charlotte <span class="subtopic-right">Charlotte, North Carolina</span></p>
+                <p class="subtopic" id="topic-desc">Computer Science (B.S.), Japanese (B.A.), GPA: 3.44 <span class="subtopic-right">Jan 2015-May 2020</span></p>
+            </div>
+            <div>
+                <p class="subtopic">Tohoku University <span class="subtopic-right">Sendai, Japan</span></p>
+                <p class="subtopic" id="topic-desc">International Research Student <span class="subtopic-right">Sept. 2017 - Aug. 2018</span></p>
+                <ul id="list-desc">
+                    <li>Junior Year Program in English</li>
+                </ul>
+            </div>
+        </div>
+        <hr size="3px" noshade>
+        <div>
+            <h2 class="topic-element"><span class="first-color">W</span>ork Experience</h2>
+            <div>
+                <p class="subtopic">Shinohara Lab, Tohoku University <span class="subtopic-right">Sendai, Japan</span></p>
+                <p class="subtopic" id="topic-desc">International Research Student <span class="subtopic-right">Sept 2017 - Aug. 2018</span></p>
+                <ul id="list-desc"> 
+                    <li>Gained experience in the Japanese Language through cultural imeersion.</li>
+                    <li>Worked and conducted research in a computing laboratory focused on theoretical computer science topics, algorithms and cybersecurity.</li>
+                    <li>Gained experience in the usage and implementation of physical security and cybersecurity concepts, knowledge of the usage of x86 Assembly in the creation of malware and attacks against hardware devices, usage of Kali Linux and network analysis tools such as Wireshark</li>
+                </ul>
+            </div>
+        </div>
+        <hr size="3px" noshade>
+        <div>
+            <h2 class="topic-element"><span class="first-color">S</span>kills</h2>
+            <div id="skills-table">
+                <table id="s-table">
+                    <tr class="list-topic">
+                        <td>Programming Language</td>
+                        <td>C, C++, Java, C#, Ruby, Python</td>
+                    </tr>
+                    <tr class="list-topic">
+                        <td>UI/Web Design</td>
+                        <td>HTML, CSS</td>
+                    </tr>
+                    <tr class="list-topic">
+                        <td>Databases</td>
+                        <td>SQL Databases(SQLite, MySQL)</td>
+                    </tr>
+                    <tr class="list-topic">
+                        <td>Software Development Life Cycle</td>
+                        <td>Agile</td>
+                    </tr>
+                    <tr class=list-topic>
+                        <td>Other Tech</td>
+                        <td>LaTeX, Vim, Visual Studio Code, Jetbrains IDE</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr size="3px" noshade>
+        <div>
+            <p>If you wish to contact me for a position, please fill the following out.</p>
+            <form>
+                <label for="recruiter-email">E-Mail<input id="email-box" type="email" name="recruiter-email"></label>
+                <label for="engineer"><input id="engineer" value="position" type="checkbox" name="position">Software Engineer</label>
+                <label for="developer"><input id="developer" value="position" type="checkbox" name="position">Software Developer</label><br>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </body>
+</html>

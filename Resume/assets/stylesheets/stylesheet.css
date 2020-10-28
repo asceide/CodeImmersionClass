@@ -1,0 +1,57 @@
+a{
+    color: rgb(255,0,0);
+}
+a:visited,a:hover{
+    color:rgb(100,0,255);
+}
+p, form, ul{
+    font-family: Dosis;
+}
+.first-color{
+    color:rgb(255,0,0);
+}
+.sub-items{
+    text-align: center;
+    font-family: Dosis;
+}
+.subtopic{
+    padding-left: 10px;
+}
+.list-topic{
+    font-family: Dosis;
+}
+.topic-element{
+    font-size: 36px;
+    font-family: Anton;
+    margin: 0px 0px -5px 0px;
+    padding: 2px 0px 2px px;
+}
+.subtopic-right{
+    float:right;
+}
+#resume-name{
+    text-align: center;
+    font-family: Anton;
+    font-size: 64px;
+    margin-bottom: -20px;
+}
+#page-top{
+    margin-top: -20px;
+}
+#address{
+    color: rgba(144, 144, 144, 0.833);
+    font-style: italic;
+}
+#skills-table{
+    margin: 15px 0px 25px 0px;
+}
+#s-table{
+    margin-left: 25px;
+}
+#topic-desc{
+    padding-left: 30px;
+    font-style: italic;
+}
+#list-desc{
+    padding-left: 40px;
+}
