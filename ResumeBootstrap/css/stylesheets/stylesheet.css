@@ -1,0 +1,58 @@
+:root{
+
+}
+*:not(i){
+    font-family: "Dosis", "sans-serif";
+}
+body{
+    padding-top:50px;
+}
+.red:first-letter{
+    color: rgb(255,0,0);
+}
+.electric-purple:first-letter{
+    color: rgb(191,0,255);
+}
+.dark-cyan:first-letter{
+    color: rgb(0,170,121);
+}
+.italics{
+    font-style: italic;
+}
+span.dark-cyan{
+    color: rgb(0,170,121);
+}
+.topic-head{
+    font-family: "Anton", "Dosis", "sans-serif";
+    font-size: 64px;
+    font-weight: bold;
+}
+.jumbotron{
+    background: none;
+    margin-top: -3%;
+    border-bottom: 2px solid slategray;
+}
+.jumbotron.text-center{
+    padding-bottom: 0px;
+}
+.exp-desc{
+    margin-top: -10px;
+}
+h4.topic-head{
+    font-size: 48px;
+}
+div.col hr{
+    border-bottom: 2px solid red;
+}
+h5.ed-item:before{
+    content: "•";
+    color: black;
+    display: inline-block;
+    width: 1em;
+}
+.col-1 h5.resume-date{
+    padding-left: 15px
+}
+div.col-4.ml-3 table td{
+    padding-right: 1rem;
+}
