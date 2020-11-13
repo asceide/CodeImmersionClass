@@ -35,12 +35,13 @@ public class ControlFlow {
             System.out.println(questions[i]);
             userInput=input.nextLine();
             if(i==3){ //To either get 6 or 7 inputs depending if the user has a favorite QB
-                if (userInput.equalsIgnoreCase("N") || userInput.equalsIgnoreCase("No")){
+                AsciiChars.checkValidity(userInput,i,input); //Check if the user input is within the proper ranges
+                if (userInput.equalsIgnoreCase("N") || userInput.equalsIgnoreCase("No") || userInput.matches("[Nn]o*")){
                     i=4; //If they don't, skip the next question and don't get any more info for this iteration
                     continue; //If they do, ask the next question. Either ways its needed
                 }
             }else{ //Other
-                AsciiChars.checkInput(userInput,i,input); //Check to see if the user has inputted a number for those relevant questions
+              //  AsciiChars.checkInput(userInput,i,input); //Check to see if the user has inputted a number for those relevant questions
                 AsciiChars.checkValidity(userInput,i,input); //Check if the user input is within the proper ranges
                 userAnswers.add(userInput); //Add it to the List
             }

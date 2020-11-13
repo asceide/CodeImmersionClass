@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.*;
 
 public class AsciiChars {
     //Imagine Mapping the ASCII table when you can just assign a char to an integer and get what you need anyways lmao
@@ -171,39 +172,62 @@ public class AsciiChars {
     }
 
     public static void checkValidity(String input, int qNum, Scanner scan) {
-        String temp;
-        int tempNum = 0;
+        String temp=input;
         switch (qNum) {
+            case 0: if(!input.matches("[a-zA-Z]+")){ //RegEx for any word
+                    do{
+                        System.out.println("You have not made a valid input. Please put in a name");
+                        temp=scan.nextLine();
+                    }while(!temp.matches("[a-zA-Z]+"));
+                input = temp;
+            }
+            break;
+            case 1:
+            case 2: if(!input.matches("\\d+")){ //RegEx for any number
+                do{
+                    System.out.println("You have not inputted a valid number. Please try again. ");
+                    temp=scan.nextLine();
+                }while(!temp.matches("\\d+"));
+                input=temp;
+            }
+            break;
+            case 3:if(!input.matches("[yYnN]{1}|([yY]es)+|([nN]o)+")){ //RegEx has to include either a Y, N, Yes or No
+                do{
+                    System.out.println("You did not select a Y or N, Please select Y or N and try again.");
+                    temp=scan.nextLine();
+                }while(!temp.matches("[yYnN]{1}|([yY]es)+|([nN]o)+"));
+                input=temp;
+            }
+            break;
+            case 4:
             case 5:
-                tempNum = Integer.parseInt(input);
-                if (tempNum < 0 || tempNum > 99) {
-                    do {
-                        System.out.println("Model year is not valid. Please select from 00 to 99");
-                        temp = scan.nextLine();
-                        checkInput(temp, qNum, scan);
-                        tempNum = Integer.parseInt(temp);
-                    } while (tempNum < 0 || tempNum > 99);
+                if (!input.matches("[0-9]{2}")) {
+                    do{
+                        if(qNum==5){
+                            System.out.println("Model year is not valid. Please select from 00 to 99");
+                        }else{
+                            System.out.println("Jersey number is not valid. Please select from 00 to 99");
+                        }
+                        temp=scan.nextLine();
+                    }while (!temp.matches("[0-9]{2}"));
                     input = temp;
                 }
                 break;
             case 6:
-                if (input.length() < 3) {
+                if (!input.matches("[a-zA-Z]{3,}")) {
                     do {
                         System.out.println("Please input a name of at least 3 characters in length: ");
                         temp = scan.nextLine();
-                    } while (input.length() < 3);
+                    } while (!temp.matches("[a-zA-Z]{3,}"));
                     input = temp;
                 }
                 break;
             case 7:
-                tempNum = Integer.parseInt(input);
-                if (tempNum < 1 || tempNum > 50) {
+                if (!input.matches("[1-9]{1}|[1-4]{1}[0-9]{1}|50")) {
                     do {
                         System.out.println("Random number is out of range. Please select a number between 1 and 50");
                         temp = scan.nextLine();
-                        checkInput(temp, qNum, scan);
-                        tempNum = Integer.parseInt(temp);
-                    } while (tempNum < 1 || tempNum > 50);
+                    } while (!temp.matches("[1-9]{1}|[1-4]{1}[0-9]{1}|50"));
                     input = temp;
                 }
                 break;
