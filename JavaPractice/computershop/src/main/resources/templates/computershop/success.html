@@ -10,11 +10,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- FontAwesome for certain icons -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>AMD Products</title>
+    <title>Signup Successful</title>
 </head>
 <header class="fixed-top" th:include="computershop/navigation :: multinav"></header>
 <body>
-
+    <div class="bg-light container pt-5">
+        <div class="row">
+            <div class="col-auto">
+                <p style="font-size: 64px;">You have successfully signed up! They will be sent to <span th:text="${email}"/></p> <!-- to output from the database or whatever the user inputted into the form, it is added to the model as a variable and it is passed to the view, where it can be accessed via th:text or other methods -->
+            </div>
+        </div>
+    </div>
 </body>
 <footer class="fixed-bottom bg-dark mt-3 pt-2" th:include="computershop/signupfoot :: signup" />
 <!-- these are at the bottom because it would be 'faster' -->

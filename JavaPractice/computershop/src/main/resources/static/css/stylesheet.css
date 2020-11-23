@@ -5,14 +5,77 @@ body{
     background-size: cover;
     padding-top: 20px;
 }
-
-div.jumbotron#frontJumbo{
-    background: rgba(255, 165, 0, .85);
-    margin: 0 12em 0 12em;
-    padding: 4em 0 1em 0;
+/*
+    Hides the default checkbox
+ */
+input[type=checkbox]{
+    visibility: hidden;
 }
-div.jumbotron p.display-4{
-    color: white;
+/*
+    This creates your own checkbox because you cannot apply custom CSS to the default checkboxes
+ */
+.custom-check{
+    position:absolute;
+    left: 2px;
+    top: 0px;
+    margin-top: 10px;
+    height: 16px;
+    width: 16px;
+    background-color:white;
+    border-radius: 20px;
+}
+/*
+    This determines the BG color shown whenever the checkbox is hovered. The ~ means that all of the property to the right of the ~ will be selected that proceed the element to the right
+ */
+.custom-box:hover input ~ .custom-check{
+    background-color: orange;
+}
+/*
+    When active
+ */
+.custom-box input:active ~ .custom-check{
+    background-color: orange;
+}
+/*
+    When checked
+ */
+.custom-box input:checked ~ .custom-check{
+    background-color: orange;
+}
+/*
+    The checkmark in the checkbox, not shown when not checked.
+ */
+.custom-check:after{
+    content:"";
+    position:absolute;
+    display:none;
+}
+/*
+    Displays the checkmark when checked.
+ */
+.custom-box input:checked ~ .custom-check:after{
+    display: block;
+}
+/*
+    Customization of the checkmark.
+ */
+.custom-box .custom-check:after {
+    left: 5px;
+    bottom: 5px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.card-info{
+    width: 12em;
+}
+.card-img-top{
+    height: 190px;
+    width: 190px;
 }
 /*
     ======Styling for the submenu======
@@ -33,4 +96,13 @@ div.jumbotron p.display-4{
     left: 100%;
     margin-top: 0px;
     margin-left: 0px;
+}
+
+div.jumbotron#frontJumbo{
+    background: rgba(255, 165, 0, .85);
+    margin: 0 12em 0 12em;
+    padding: 4em 0 1em 0;
+}
+div.jumbotron p.display-4{
+    color: white;
 }

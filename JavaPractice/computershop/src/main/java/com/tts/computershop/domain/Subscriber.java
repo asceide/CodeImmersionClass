@@ -31,6 +31,7 @@ public class Subscriber {
         this.email = email;
     }
 
+
     public boolean isAmdNews() {
         return amdNews;
     }
@@ -46,6 +47,7 @@ public class Subscriber {
     public void setIntelNews(boolean intelNews) {
         this.intelNews = intelNews;
     }
+
 
     @Override
     public String toString() {
