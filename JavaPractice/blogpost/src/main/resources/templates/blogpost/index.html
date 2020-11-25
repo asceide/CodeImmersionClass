@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!--Pass along the tag you want to use to replace as a parameter -->
+<head th:replace="fragments/styling :: head-links(~{::title}, ~{::link})">
+    <title>Blog Site</title>
+    <link />
+</head>
+<header th:replace="fragments/navbar :: navbar"/>
+<body>
+<div class="container">
+    <h1>Welcome to Our Blog Post Site!</h1>
+
+    <div class="row">
+        <div th:each="blog:${posts}">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 th:text="${blog.title}"></h2>
+                    </div>
+                    <div class="panel-body">
+                        <strong><p th:text="${blog.author}"/></strong>
+                        <p th:text="${blog.blogEntry}" />
+                    </div>
+                    <div class="panel-footer">
+                        <!-- Link to Update -->
+                        <!-- Link to Show  -->
+                        <!--  Link to Destroy -->
+                        <!-- HTML does not support put or delete methods for its method attribute, so for thyme leaf you would use the following form action. Syntax is @{'(map to send{var})'({var}={variable in obj})}" -->
+                        <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="delete"
+                              class="form-horizontal">
+                            <div class="form-group">
+                                <!--This generates a hidden input element that will be picked up by the Spring MVC -->
+                                <input type="hidden" name="_method" value="delete"/>
+                                <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/styling::bottom-links"/>
+</body>
+</html>

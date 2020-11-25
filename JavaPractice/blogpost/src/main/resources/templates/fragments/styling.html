@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- Add parameters to the name of the fragment if you want to pass along new arguments. However, if you want to add links that are specific in scope in other html files without getting those replaced, do it as seen below
+and for each placeholder you want to be replaced, add a  th:replace="${obj.name}" parameter to that tag. if there is a block of tags you want to add, use the th:block parameter -->
+<head th:fragment="head-links(title,links)">
+    <title th:replace="${title}">Blog Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" th:href="@{../../css/standard.css}">
+    <th:block th:replace="${links}"/>
+</head>
+<body>
+<div th:fragment="bottom-links">
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+</div>
+</body>
+</html>
+
+
+
