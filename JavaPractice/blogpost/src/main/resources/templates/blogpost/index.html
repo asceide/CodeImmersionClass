@@ -23,6 +23,9 @@
                     </div>
                     <div class="panel-footer">
                         <!-- Link to Update -->
+                            <a href="#" th:href="@{blogposts/{id}(id=${blog.id})}">
+                                <button class="btn btn-light">Edit Post</button>
+                            </a>
                         <!-- Link to Show  -->
                         <!--  Link to Destroy -->
                         <!-- HTML does not support put or delete methods for its method attribute, so for thyme leaf you would use the following form action. Syntax is @{'(map to send{var})'({var}={variable in obj})}" -->

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class BlogPostController {
@@ -26,6 +27,29 @@ public class BlogPostController {
     public String newBlog (BlogPost blogPost) {
         return "blogpost/new";
     }
+    @RequestMapping(value="/blogposts/{id}", method=RequestMethod.GET)
+    public String editPostWithId(@PathVariable Long id, BlogPost blogPost, Model model){
+        Optional<BlogPost> post = blogPostRepository.findById(id);
+        if(post.isPresent()){
+            BlogPost actualPost=post.get();
+            model.addAttribute("blogPost", actualPost);
+        }
+        return "blogpost/edit";
+    }
+    @RequestMapping(value="/blogposts/update/{id}")
+    public String updateExistingPost(@PathVariable Long id, BlogPost blogPost, Model model) {
+        Optional<BlogPost> post = blogPostRepository.findById(id);
+        if (post.isPresent()) {
+            BlogPost actualPost = post.get();
+            actualPost.setTitle(blogPost.getTitle());
+            actualPost.setAuthor(blogPost.getAuthor());
+            actualPost.setBlogEntry(blogPost.getBlogEntry());
+            blogPostRepository.save(actualPost);
+            model.addAttribute("blogPost", actualPost);
+        }
+        return "blogpost/result";
+    }
+
 
     @RequestMapping(value = "/blogposts/{id}")
     public String deletePostWithId(@PathVariable(value="id") Long id, BlogPost blogPost) {
